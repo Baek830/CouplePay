@@ -5,22 +5,26 @@ application up and running.
 
 Things you may want to cover:
 
-* Version 
- - Ruby 2.5.1
- - Ruby On Rails 5.2.3
+# Version 
+  - Ruby 2.5.1
+  - Ruby on Rails 5.2.3
 
-* System dependencies
+# Database creation
 
-* Configuration
+## Users Table
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false|
+|email|string|null: false, unique: true|
+|password|string|null: false|
 
-* Database creation
+### Association
+- has_many :
 
-* Database initialization
+## Projects Table
+|Column|Type|Options|
+|------|----|-------|
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
 
-* ...
