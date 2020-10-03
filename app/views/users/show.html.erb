@@ -1,2 +1,8 @@
 <h2><%= @user.nickname %>'s Account Balance </h2>
 
+<%= form_with model:@income, local: true do |form| %>
+  <%= form.date_field :date %>
+  <%= form.text_field :name %>
+  <%= form.number_field :price %>
+<% end %>
+
