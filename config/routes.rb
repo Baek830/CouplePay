@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   
   root 'projects#index'
   resources :incomes
-  resources :outgoes
+  resources :outgos
   resources :users, only: [:show, :edit, :update] do
     member do
       get "logout"

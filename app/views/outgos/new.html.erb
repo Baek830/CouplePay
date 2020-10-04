@@ -1,0 +1,24 @@
+<%= form_with(model: @outgo, local: true) do |form| %>
+  <div class="form-group">
+    <%= form.label :date, "日付" %>
+    <%= form.date_field :date %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :name, "品目" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :price, "金額" %>
+    <%= form.number_field :price %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :category_id, "カテゴリー" %>
+    <%= form.select(:category_id, Category.all.map {|category|[category.name, category.id]}, {prompt: "選択してください"}, {class: "form-group-category"}) %>
+  </div>
+  <div class="form-group">
+    <%= form.submit "登録" %>
+  </div>
+<% end %>

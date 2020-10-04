@@ -1,2 +1,0 @@
-class OutgoesController < ApplicationController
-end
