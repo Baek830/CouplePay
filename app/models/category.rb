@@ -10,7 +10,7 @@ class Category < ActiveHash::Base
     {id: 8, name: '生活雑貨(消耗品)'},
     {id: 9, name: '家具家電'},
     {id: 10, name: '交通費'},
-    {id: 11, name: '旅行'},
+    {id: 11, name: '旅行'}
   ]
 
   include ActiveHash::Associations

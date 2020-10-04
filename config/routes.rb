@@ -3,12 +3,14 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
-
+  
+  root 'projects#index'
+  resources :incomes
+  resources :outgoes
   resources :users, only: [:show, :edit, :update] do
     member do
       get "logout"
     end
   end
 
-  root 'projects#index'
 end

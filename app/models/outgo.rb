@@ -1,5 +1,5 @@
 class Outgo < ApplicationRecord
   belongs_to :user
-  ActiveHash::Associations::ActiveRecordExtensions
+  extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :category
 end
