@@ -11,4 +11,12 @@ class IncomesController < ApplicationController
     end
   end
 
+  private
+  def income_params
+    params.require(:income).permit(
+      :name,
+      :date,
+      :price,
+      :category_id
+    ).merge(user_id: current_user.id)
 end
