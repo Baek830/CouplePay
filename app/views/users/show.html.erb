@@ -12,12 +12,14 @@
     <th>収支</th>
   </tr>
   <tr>
-    <td>2020/10/05</td>
-    <td>10月給与</td>
-    <td>¥220,000</td>
+    <% Income.all.each do |income| %>
+    <td><%= income.date %></td>
+    <td><%= income.name %></td>
+    <td><%= income.price %></td>
     <td>--------</td>
     <td>--------</td>
     <td>¥220,000</td>
+    <% end %>
   </tr>
 
 
