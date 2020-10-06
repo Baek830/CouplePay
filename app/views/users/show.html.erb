@@ -1,3 +1,24 @@
 <h2><%= @user.nickname %>'s Account Balance </h2>
 <%= link_to "収入登録", new_income_path %>
 <%= link_to "支出登録", new_outgo_path %>
+
+<table>
+  <tr>
+    <th>日付</th>
+    <th>収入</th>
+    <th>金額</th>
+    <th>支出</th>
+    <th>金額</th>
+    <th>収支</th>
+  </tr>
+  <tr>
+    <td>2020/10/05</td>
+    <td>10月給与</td>
+    <td>¥220,000</td>
+    <td>--------</td>
+    <td>--------</td>
+    <td>¥220,000</td>
+  </tr>
+
+
+</table>
