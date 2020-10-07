@@ -7,18 +7,14 @@
     <th>日付</th>
     <th>収入</th>
     <th>金額</th>
-    <th>支出</th>
-    <th>金額</th>
     <th>収支</th>
   </tr>
   <tr>
-    <% Income.all.each do |income| %>
+    <% @incomes.each do |income| %>
     <td><%= income.date %></td>
     <td><%= income.name %></td>
     <td><%= income.price %></td>
-    <td>--------</td>
-    <td>--------</td>
-    <td>¥220,000</td>
+    <td><%= i = income %></td>
     <% end %>
   </tr>
 
