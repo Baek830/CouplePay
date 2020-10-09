@@ -9,13 +9,15 @@
     <th>金額</th>
     <th>収支</th>
   </tr>
+
+  <% @incomes.each do |income| %>
   <tr>
-    <% @incomes.each do |income| %>
     <td><%= income.date %></td>
     <td><%= income.name %></td>
     <td><%= income.price %></td>
-    <% end %>
+    <td><%= @total_income += income.price %></td>
   </tr>
+  <% end %>
 
 
 </table>
