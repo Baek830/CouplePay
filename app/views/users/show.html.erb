@@ -7,16 +7,33 @@
     <th>日付</th>
     <th>収入</th>
     <th>金額</th>
+    <th>支出</th>
+    <th>金額</th>
     <th>収支</th>
   </tr>
 
-  <% @incomes.each do |income| %>
-  <tr>
-    <td><%= income.date %></td>
-    <td><%= income.name %></td>
-    <td>¥<%= income.price %></td>
-    <td>¥<%= @total_income += income.price %></td>
-  </tr>
+  <% @mixed_array.each do |data| %>
+    <% if data.category_id == 1 || data.category_id == 2 %>
+      <tr>
+        <td><%= data.date %></td>
+        <td><%= data.name %></td>
+        <td>¥<%= data.price.to_s(:delimited) %></td>
+        <td>-----------</td>
+        <td>-----------</td>
+        <% @total_income += data.price %>
+        <td>¥<%= @total_income.to_s(:delimited) %></td>
+      </tr>
+    <% else %>
+      <tr>
+        <td><%= data.date %></td>
+        <td>-----------</td>
+        <td>-----------</td>
+        <td><%= data.name %></td>
+        <td>¥<%= data.price.to_s(:delimited) %></td>
+        <% @total_income -= data.price %>
+        <td>¥<%= @total_income.to_s(:delimited) %></td>
+      </tr>
+    <% end %>
   <% end %>
 
 

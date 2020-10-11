@@ -3,9 +3,10 @@ class UsersController < ApplicationController
 
   def show
     @incomes = @user.incomes
-    @outgoes = @user.outgoes
+    @outgos = @user.outgos
+    @mixed_array = @incomes | @outgos
+    @mixed_array.sort_by! { |a| a[:date]}
     @total_income = 0
-
   end
   
   private
